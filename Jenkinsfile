@@ -12,8 +12,10 @@ pipeline {
             }
         }
         stage('docker-compose start') {
+        	steps{
         	timeout(time: 3, unit: 'HOURS') {
                     sh 'docker compose up -d'
+                }
                 }
     	}
     }
